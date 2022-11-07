@@ -6,37 +6,69 @@ body {
 
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+}
+
 .nav-container {
-    max-width: 1068px;
-    margin: auto;
     display: flex;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
 }
 
-.main-title {
-    font-size: 22px;
-    align-items: center;
-    justify-items: center;
+#shopping-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
     text-align: center;
+    margin: 5rem 0;
 }
 
 .shop-content {
     display: grid;
-    margin: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 3rem;
+    margin: 2rem;
 }
 
 .product-box {
     position: relative;
-    margin: 20px;
+
+}
+
+.product-box:hover {
+    padding: 10px;
+    border: 1px solid;
+    transition: 0.4s;
 }
 
 .product-img {
-    width: 20%;
+    width: 100%;
     height: auto;
+    margin-bottom: 0.5rem;
 }
 
 .product-title {
     font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
 }
+
+.price {
+    font-weight: 500;
+}
+
+3366+666+555
