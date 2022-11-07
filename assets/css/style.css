@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: grey;
+
+}
+
+.nav-container {
+    max-width: 1068px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.main-title {
+    font-size: 22px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.shop-content {
+    display: grid;
+    margin: 20px;
+}
+
+.product-box {
+    position: relative;
+    margin: 20px;
+}
+
+.product-img {
+    width: 20%;
+    height: auto;
+}
+
+.product-title {
+    font-size: 18px;
+}
