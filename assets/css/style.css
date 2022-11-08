@@ -2,8 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: grey;
-
+    background: #dfdada;
 }
 
 header {
@@ -11,7 +10,10 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: #f0f0f0;
+    z-index: 1; 
 }
 
 .nav-container {
@@ -24,9 +26,28 @@ header {
     padding: 15px;
 }
 
+/*ícone do carrinho*/
 #shopping-icon {
     font-size: 1.8rem;
     cursor: pointer;
+}
+
+/*Aba do carrinho*/
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 360px;
+    min-height: 100vh;
+    padding: 20px;
+    background: #f0f0f0;
+}
+
+.cart-title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 2.3rem;
 }
 
 .section-title {
@@ -45,6 +66,9 @@ header {
 
 .product-box {
     position: relative;
+    border: solid;
+    border-radius: 15px;
+    border-width: 1px;
 
 }
 
@@ -57,18 +81,38 @@ header {
 .product-img {
     width: 100%;
     height: auto;
+    border-radius: 15px;
     margin-bottom: 0.5rem;
 }
 
 .product-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
+    width: 300px;
+    height: 50px;
     text-transform: uppercase;
+    padding-left: 10px;
     margin-bottom: 0.5rem;
 }
 
 .price {
+    display: flex;
+    font-size: 18px;
     font-weight: 500;
+    padding-left: 3px;
+    padding-bottom: 11px;
+    margin-left: 0.5rem;
 }
 
-3366+666+555
+.add-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.add-icon:hover {
+    scale: 1.1;
+}
