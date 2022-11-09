@@ -13,11 +13,39 @@
 <body>
     <header>
         <div class="nav-container">
-            <h1>Loja da Música</h1>
+            <div class="name-logo">
+                <img src="assets/img/logo.png" alt="">
+                <h1>Loja da Música</h1>
+            </div>
             <i class="fa-solid fa-cart-shopping" id="shopping-icon"></i>
 
+            <!-- Aba do carrinho -->
             <div class="cart">
                 <h2 class="cart-title">Seu Carrinho</h2>
+                <!-- Conteúdo do carrinho -->
+                <div class="cart-content">
+
+                    <div class="cart-box">
+                        <img src="assets/img/cort_les_paul.jpg" alt="" class="cart-img">
+                        <div class="detail-box">
+                            <div class="cart-product-title">Guitarra Cort CR300 ATB Aged Vintage Burst</div>
+                            <div class="cart-price">R$ 4.365,00</div>
+                            <input type="number" value="1" class="cart-quantity">
+                        </div>
+                        <!-- Ícone de lixeira para excluir conteúdo -->
+                        <i class="fa-solid fa-trash cart-remove"></i>
+                    </div>
+
+                </div>
+                <!-- Total -->
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">R$0</div>
+                </div>
+                <!-- Botão de comprar -->
+                <button type="button" class="btn-buy">Compre Agora</button>
+                <!-- Ícone de fechar a aba do carrinho -->
+                <i class="fa-solid fa-xmark" id="close-cart"></i>
             </div>
         </div>
 
