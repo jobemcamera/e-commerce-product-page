@@ -18,15 +18,21 @@ header {
 
 .nav-container {
     display: flex;
-    max-width: 900px;
-    width: 100%;
-    margin: auto;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
 }
 
-/*ícone do carrinho*/
+.name-logo {
+    display: flex;  
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
 #shopping-icon {
     font-size: 1.8rem;
     cursor: pointer;
@@ -40,7 +46,7 @@ header {
     width: 360px;
     min-height: 100vh;
     padding: 20px;
-    background: #f0f0f0;
+    background: #f2fbf2;
 }
 
 .cart-title {
@@ -50,18 +56,106 @@ header {
     padding: 2.3rem;
 }
 
+.cart-box {
+    display: grid;
+    grid-template-columns: 30% 55% 20%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cart-img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.detail-box {
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.cart-product-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.cart-price {
+    font-weight: 500;
+}
+
+.cart-quantity {
+    border: 1px solid;
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.cart-remove {
+    font-size: 20px;
+    margin-top: 7px;
+    color: red;
+    cursor: pointer;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    border-top: 1px solid;
+}
+
+.total-title, .total-price {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.btn-buy {
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+#close-cart {
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Conteúdo da Main */
+section {
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
 .section-title {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
-    margin: 5rem 0;
+    margin: 6.5rem 0;
 }
 
 .shop-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-    gap: 3rem;
-    margin: 2rem;
+    grid-template-columns: 265px 265px 265px 265px; 
+   /* grid-template-columns: repeat(auto-fit, minmax(265px, auto)); */
+   /* grid-template-columns: repeat(auto-fill, minmax(265px, auto)); */
+   gap: 3rem;
+   margin: 2rem;
+   justify-content: center;
+   align-items: center;
 }
 
 .product-box {
@@ -86,10 +180,10 @@ header {
 }
 
 .product-title {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
-    width: 300px;
-    height: 50px;
+    width: auto;
+    height: 80px;
     text-transform: uppercase;
     padding-left: 10px;
     margin-bottom: 0.5rem;
@@ -116,3 +210,4 @@ header {
 .add-icon:hover {
     scale: 1.1;
 }
+
