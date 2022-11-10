@@ -17,14 +17,16 @@ header {
 }
 
 .nav-container {
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     padding: 15px;
     box-shadow: -2px 2px 4px hsl(0 4% 15% / 10%);
 }
 
 .name-logo {
+    width: 1000px;
     display: flex;  
     align-items: center;
 }
@@ -35,6 +37,9 @@ header {
 }
 
 #cart-icon {
+    margin-left: auto;
+    margin-right: 0;
+    justify-self: flex-end;
     font-size: 1.8rem;
     cursor: pointer;
 }
@@ -146,20 +151,18 @@ header {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
-    margin-top: 6.5rem;
-    margin-bottom: 1.2rem;
+    margin-top: 110px;
+    margin-bottom: 25px;
 }
 
 .shop-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(265px, auto)); 
-    gap: 3rem;
-    margin-left: 25rem;
-    margin-right: 25rem;
-    margin-bottom: 5rem;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
+    width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(265px, auto));
+    gap: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product-box {
@@ -167,7 +170,6 @@ header {
     border: solid;
     border-radius: 15px;
     border-width: 1px;
-
 }
 
 .product-box:hover {
