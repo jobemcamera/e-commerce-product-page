@@ -89,12 +89,13 @@ header {
 }
 
 .cart-product-title {
-    font-size: 0.9rem;
+    font-size: 14px;
     text-transform: uppercase;
 }
 
 .cart-price {
     font-weight: 500;
+    font-size: 20px;
 }
 
 .cart-quantity {
@@ -172,9 +173,10 @@ header {
 }
 
 .product-box:hover {
-    padding: 10px;
-    border: 1px solid;
-    transition: 0.4s;
+    border: solid 3px;
+    border-color: green;
+    
+
 }
 
 .product-img {
