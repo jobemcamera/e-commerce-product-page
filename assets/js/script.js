@@ -25,7 +25,6 @@ if (document.readyState == 'loading') {
 function ready () {
     // remover do carrinho
     var removeCartButton = document.getElementsByClassName('cart-remove')
-    console.log(removeCartButton)
     for (var i = 0; i < removeCartButton.length; i++) {
         var button = removeCartButton[i]
         button.addEventListener('click', removeCartItem)
@@ -40,7 +39,7 @@ function ready () {
 
     // adicionar no carrinho
     var addCart = document.getElementsByClassName("add-icon")
-    for (var i=0; i < addCart.length; i++) {
+    for (var i = 0; i < addCart.length; i++) {
         var button = addCart[i]
         button.addEventListener("click", addCartClicked)
     }  
@@ -64,7 +63,6 @@ function removeCartItem(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.remove()
     updateTotal()
-
 }
 
 // Alterando a quantidade de itens
@@ -79,12 +77,13 @@ function quantityChanged(event) {
 // Adicionando ao carrinho
 function addCartClicked(event) {
     var button = event.target
-    var products = button.parentElement.parentElement
+    var products = button.parentElement
     var title = products.getElementsByClassName('product-title')[0].innerText
     var price = products.getElementsByClassName('price')[0].innerText
     var imgScr = products.getElementsByClassName('product-img')[0].scr
     console.log(title, price, imgScr)
     addProductsCart(title, price, imgScr)
+    updateTotal()
 }
 
 // Adicionando produto ao carrinho
