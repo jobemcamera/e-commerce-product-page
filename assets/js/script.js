@@ -50,11 +50,16 @@ function ready () {
 
 // Finalizar compra
 function buyButtonClicked() {
-    alert('Sua produtos estão na aba de pagamento!')
     var cartContent = document.getElementsByClassName('cart-content')[0]
-    while (cartContent.hasChildNodes()) {
-        cartContent.removeChild(cartContent.firstChild);
+    if (cartContent.hasChildNodes()) {
+        alert('Seus produtos estão na aba de pagamento!')
+        while (cartContent.hasChildNodes()) {
+            cartContent.removeChild(cartContent.firstChild);
+        }
+    } else {
+        alert('Você não possui itens no carrinho.')
     }
+    
     updateTotal()
 }
 
@@ -80,6 +85,7 @@ function addCartClicked(event) {
     var products = button.parentElement
     var title = products.getElementsByClassName('product-title')[0].innerText
     var price = products.getElementsByClassName('price')[0].innerText
+    // a função não está retornando o diretório da imagem VERIFICAR
     var imgScr = products.getElementsByClassName('product-img')[0].scr
     console.log(title, price, imgScr)
     addProductsCart(title, price, imgScr)
@@ -123,10 +129,23 @@ function updateTotal () {
         var cartBox = cartDetail[i]
         var priceElement = cartBox.getElementsByClassName('cart-price')[0]
         var quantityElement = cartBox.getElementsByClassName('cart-quantity')[0]
-        var price = parseFloat(priceElement.innerText.replace('R$ ', ''))
+        // formatando o preço do tipo texto em tipo float
+        var priceRS = priceElement.innerText.replace('R$', '')
+        var priceDot = priceRS.replace('.', '')
+        var price = priceDot.replace(',', '.')
+        parseFloat(price)
         var quantity = quantityElement.value
         total = total + (price * quantity)
+        
     }
     total = Math.round(total * 100) / 100
-    document.getElementsByClassName('total-price')[0].innerText = 'R$ ' + total
+    
+    // criando o formato de moeda do Brasil
+    var formatter = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        minimumFractionDigits: 2,
+    })
+
+    document.getElementsByClassName('total-price')[0].innerText = formatter.format(total)
 }

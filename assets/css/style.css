@@ -3,6 +3,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background: #dfdada;
+    overflow-x: hidden;
 }
 
 header {
@@ -42,6 +43,24 @@ header {
     justify-self: flex-end;
     font-size: 1.8rem;
     cursor: pointer;
+}
+
+footer {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    box-shadow: -2px 2px 4px rgba(225, 16, 16, 0.1);
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.footer-info p {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: rgb(89, 89, 89);
 }
 
 /*Aba do carrinho*/
@@ -146,6 +165,8 @@ header {
     cursor: pointer;
 }
 
+
+
 /* Conteúdo da Main */
 .section-title {
     font-size: 1.5rem;
@@ -218,3 +239,24 @@ header {
     scale: 1.1;
 }
 
+@media screen and (max-width: 1080px) {
+    .name-logo {
+        width: 600px;
+    }
+    .shop-content {
+        width: 600px;
+        grid-template-columns: 130 130 130;
+    }
+}  
+
+@media screen and (max-width: 480px) {
+    .name-logo {
+        width: 280px;
+    }
+    .shop-content {
+        width: 250px;
+    }
+    .footer-info p {
+        font-size: 12px;
+    }    
+}
