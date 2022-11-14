@@ -13,64 +13,28 @@ closeCart.onclick = () => {
     cart.classList.remove("active")
 };
 
-// Aguarda a págia estar pronta
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
-} else {
-    ready()
-}
-
-
-// Página pronta
-function ready () {
-    // remover do carrinho
-    var removeCartButton = document.getElementsByClassName('cart-remove')
-    for (var i = 0; i < removeCartButton.length; i++) {
-        var button = removeCartButton[i]
-        button.addEventListener('click', removeCartItem)
-    }
-
-    // Alterando a quantidade de produtos no carrinho
-    var quantityInput = document.getElementsByClassName('cart-quantity')
-    for (var i = 0; i < quantityInput.length; i++) {
-        var input = quantityInput[i]
-        input.addEventListener('change', quantityChanged)
-    }
-
-    // adicionar no carrinho
-    var addCart = document.getElementsByClassName("add-icon")
-    for (var i = 0; i < addCart.length; i++) {
-        var button = addCart[i]
-        button.addEventListener("click", addCartClicked)
-    }  
-    
-    // Botão de finalizar compra
-    document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked)
-}
-
-// Finalizar compra
-function buyButtonClicked() {
-    var cartContent = document.getElementsByClassName('cart-content')[0]
-    if (cartContent.hasChildNodes()) {
-        alert('Seus produtos estão na aba de pagamento!')
-        while (cartContent.hasChildNodes()) {
-            cartContent.removeChild(cartContent.firstChild);
-        }
-    } else {
-        alert('Você não possui itens no carrinho.')
-    }
-    
-    updateTotal()
-}
 
 // Remover do carrinho
+var removeCartButton = document.getElementsByClassName('cart-remove')
+for (var i = 0; i < removeCartButton.length; i++) {
+    var button = removeCartButton[i]
+    button.addEventListener('click', removeCartItem)
+}
+
 function removeCartItem(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.remove()
     updateTotal()
 }
 
-// Alterando a quantidade de itens
+
+// Alterando a quantidade de produtos no carrinho
+var quantityInput = document.getElementsByClassName('cart-quantity')
+for (var i = 0; i < quantityInput.length; i++) {
+    var input = quantityInput[i]
+    input.addEventListener('change', quantityChanged)
+}
+
 function quantityChanged(event) {
     var input = event.target
     if (isNaN(input.value) || input.value <= 0) {
@@ -79,20 +43,25 @@ function quantityChanged(event) {
     updateTotal()
 }
 
-// Adicionando ao carrinho
+
+// Adicionando no carrinho
+var addCart = document.getElementsByClassName("add-icon")
+for (var i = 0; i < addCart.length; i++) {
+    var button = addCart[i]
+    button.addEventListener("click", addCartClicked)
+}  
+
 function addCartClicked(event) {
     var button = event.target
     var products = button.parentElement
     var title = products.getElementsByClassName('product-title')[0].innerText
     var price = products.getElementsByClassName('price')[0].innerText
     // a função não está retornando o diretório da imagem VERIFICAR
-    var imgScr = products.getElementsByClassName('product-img')[0].scr
-    console.log(title, price, imgScr)
+    var imgScr = products.getElementsByClassName('product-img')[0].scr;
     addProductsCart(title, price, imgScr)
     updateTotal()
 }
 
-// Adicionando produto ao carrinho
 function addProductsCart(title, price, imgScr) {
     var cartShop = document.createElement('div')
     cartShop.classList.add('cart-box')
@@ -106,7 +75,7 @@ function addProductsCart(title, price, imgScr) {
         }
     }
     var cartBoxContent = `
-                        <img src="${imgScr}" alt="" class="cart-img">
+                        <img scr="${imgScr}" alt="" class="cart-img">
                         <div class="detail-box">
                             <div class="cart-product-title">${title}</div>
                             <div class="cart-price">${price}</div>
@@ -119,6 +88,24 @@ function addProductsCart(title, price, imgScr) {
     cartShop.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem)
     cartShop.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged)
 }
+
+
+// Botão de finalizar compra
+document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked)
+
+function buyButtonClicked() {
+    var cartContent = document.getElementsByClassName('cart-content')[0]
+    if (cartContent.hasChildNodes()) {
+        alert('Seus produtos estão na aba de pagamento!')
+        while (cartContent.hasChildNodes()) {
+            cartContent.removeChild(cartContent.firstChild);
+        }
+    } else {
+        alert('Você não possui itens no carrinho.')
+    }
+    updateTotal()
+}
+
 
 // Atualizando o total
 function updateTotal () {
