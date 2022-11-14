@@ -122,10 +122,8 @@ function updateTotal () {
         var price = priceDot.replace(',', '.')
         parseFloat(price)
         var quantity = quantityElement.value
-        total = total + (price * quantity)
-        
+        total = total + (price * quantity)  
     }
-    total = Math.round(total * 100) / 100
     
     // criando o formato de moeda do Brasil
     var formatter = new Intl.NumberFormat('pt-BR', {
