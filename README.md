@@ -5,7 +5,7 @@
 <h2> Descrição da aplicação </h2>
 Esse aplicação é uma página de produtos de um e-commerce. Escolhi uma loja de instrumentos musicais por ser apaixonado por música e por tocar guitarra.
 
-O usuário adicionar os produtos através do botão (bolsa) que há em cada card. No botão do carrinho, abrirá uma aba contendo os produtos que você adicionou, mostrando sua imagem, descrição e preço. O usuário poderá informar a quantidade de cada item com o seletor numérico e o valor total será atualizado. Caso o usuário adicione um produto já existente no carrinho, ele será informado pela página. Caso o usuário queira excluir um produto do carrinho, basta clicar no botão (lixeira) que o produto será excluído. Ao clicar em Fechar Compra, os produtos do carrinho serão direcionados a próxima (futura) página Efetuar Pagamento.
+O usuário pode adicionar os produtos através do botão (bolsa) que há em cada card. No botão do carrinho, abrirá uma aba contendo os produtos que o usuário adicionou, mostrando sua imagem, descrição e preço. O usuário poderá informar a quantidade de cada item com o seletor numérico e o valor total será atualizado. Caso o usuário adicione um produto já existente no carrinho, ele será informado pela página. Caso o usuário queira excluir um produto do carrinho, basta clicar no botão (lixeira) que o produto será excluído. Ao clicar em Fechar Compra, os produtos do carrinho serão direcionados a próxima (futura) página Efetuar Pagamento.
 
 <h2>Objetivos</h2>
 
